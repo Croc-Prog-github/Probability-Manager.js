@@ -1,4 +1,4 @@
-// Creazione di un'istanza di ProbabilityManager
+// Definizione
 const probManager = new ProbabilityManager();
 
 // Aggiunta di eventi con le loro probabilità
@@ -7,5 +7,5 @@ probManager.addEvent('Silver Coin', 30);
 probManager.addEvent('Bronze Coin', 60);
 
 // Estrazione di un evento casuale
-const randomEvent = probManager.getRandomEvent();
-console.log(`Evento estratto: ${randomEvent}`);
+let MyRandomEvent = probManager.getRandomEvent();
+console.log(`Evento estratto: ${MyRandomEvent}`);
