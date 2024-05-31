@@ -14,14 +14,17 @@
 </html>
 
 <script>
+    // Correggere il fetch e ottenere il contenuto del file senza commenti sourceMappingURL
     fetch('/core/example.js')
-    .then(response => response.text())
-    .then(scriptContent => {
-        document.getElementById('Editor').textContent = scriptContent;
-    })
-    .catch(error => {
-        console.error('Error fetching example script:', error);
-    });
+        .then(response => response.text())
+        .then(scriptContent => {
+            // Rimuove le righe che iniziano con //# sourceMappingURL=
+            scriptContent = scriptContent.replace(/\/\/# sourceMappingURL=.*$/gm, '');
+            document.getElementById('Editor').textContent = scriptContent;
+        })
+        .catch(error => {
+            console.error('Error fetching example script:', error);
+        });
 
     // Reindirizzare l'output console
     (function() {
