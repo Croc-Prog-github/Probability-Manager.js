@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Probability Manager.js</title>
+    <script src="/core/Probability-Manager.js"></script>
 </head>
 <body>
-    
+    <textarea id="Editor" cols="65" rows="16" autocomplete="off"></textarea>
 </body>
 </html>
+
+<script>
+    let script = fetch('/core/example.js');
+    document.getElementById('Editor').textContent = script;
+
+</script>
