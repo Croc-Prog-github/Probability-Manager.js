@@ -14,9 +14,31 @@
 </html>
 
 <script>
-    let ExampleScript = fetch('/core/example.js');
-    document.getElementById('Editor').textContent = ExampleScript;
+    fetch('/core/example.js')
+    .then(response => response.text())
+    .then(scriptContent => {
+        document.getElementById('Editor').textContent = scriptContent;
+    })
+    .catch(error => {
+        console.error('Error fetching example script:', error);
+    });
+
+    // Reindirizzare l'output console
+    (function() {
+        var oldLog = console.log;
+        console.log = function(message) {
+            document.getElementById('Out').value += message + '\n';
+            oldLog.apply(console, arguments);
+        };
+    })();
+
     function Run() {
-        
+        const editorContent = document.getElementById('Editor').value;
+        try {
+            document.getElementById('Out').value = ''; // Pulisce l'output
+            eval(editorContent);
+        } catch (error) {
+            document.getElementById('Out').value = 'Error: ' + error.message;
+        }
     }
 </script>
