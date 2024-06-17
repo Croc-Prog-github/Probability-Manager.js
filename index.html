@@ -6,7 +6,7 @@
     <title>Probability Manager.js</title>
     <script src="/core/Probability-Manager.js"></script>
   </head>
-  <body onload="Fetch()" style="display: flex; flex-direction: column; background: #2b2b2b;">
+  <body style="display: flex; flex-direction: column; background: #2b2b2b;">
     <textarea name="Editor" id="Editor" oninput="Run()" rows="17" autocomplete="off" style="resize: vertical;" spellcheck="false">
 const probManager = new ProbabilityManager();
 
@@ -34,7 +34,6 @@ probManager.clearInstance('Istanza1');</textarea>
 </html>
 
 <script>
-  function Fetch() {
     // Correggere il fetch e ottenere il contenuto del file senza commenti sourceMappingURL
   fetch('/core/example.js')
   .then(response => response.text())
@@ -68,7 +67,6 @@ console.log('Oggetto estratto: '+ randomEvent);
 probManager.clearInstance('Istanza1');`
 
   });
-  }
   
 
   // Reindirizzare l'output console
