@@ -26,12 +26,13 @@ Un semplice framework per JS che semplifica la gestione della probabilità, sopr
 **Oggetti**: Un oggetto è una variabile, solitamente una stringa di caratteri di testo (esempio: Moneta d'oro), associato a una valore in percentuale (cioè la probabilità di essere estratto).<br>In una Lista, puoi aggiungere tutti gli Oggetti che vuoi, a condizione che la somma di tutti i valori in percentuale sia uguale a 100.
 
 ## Utilizzo
-Utilizza i seguenti comandi per includere il file nel tuo script:
+Utilizza i seguenti comandi per includere il file nel tuo script:<br>
 **JavaScript**:
 ```js
 import probManager from "https://raw.githubusercontent.com/Croc-Prog-github/Probability-Manager.js/main/core/Probability-Manager.js";
 ```
-**TypeScript**
+
+**TypeScript** (Non indicizzato)
 ```ts
 import probManager from "https://raw.githubusercontent.com/Croc-Prog-github/Probability-Manager.js/main/core/Probability-Manager.ts";
 ```
