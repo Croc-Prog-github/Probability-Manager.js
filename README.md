@@ -32,7 +32,7 @@ Utilizza i seguenti comandi per includere il file nel tuo script:<br>
 import probManager from "https://raw.githubusercontent.com/Croc-Prog-github/Probability-Manager.js/main/core/Probability-Manager.js";
 ```
 
-**TypeScript** (Non indicizzato)
+**TypeScript**
 ```ts
 import probManager from "https://raw.githubusercontent.com/Croc-Prog-github/Probability-Manager.js/main/core/Probability-Manager.ts";
 ```
