@@ -34,7 +34,7 @@ probManager.clearInstance('Istanza1');</textarea>
 </html>
 
 <script>
-    // Correggere il fetch e ottenere il contenuto del file senza commenti sourceMappingURL
+  // Correggere il fetch e ottenere il contenuto del file senza commenti sourceMappingURL
   fetch('/core/example.js')
   .then(response => response.text())
   .then(scriptContent => {
@@ -44,6 +44,11 @@ probManager.clearInstance('Istanza1');</textarea>
   })
   .catch(error => {
     console.error('Error fetching example script:', error);
+  });
+
+  AlternativeForStatic()
+
+  function AlternativeForStatic() {
     document.getElementById('Editor').innerHTML = 
 `const probManager = new ProbabilityManager();
 
@@ -65,8 +70,7 @@ console.log('Oggetto estratto: '+ randomEvent);
 
 // Pulizia delle istanze
 probManager.clearInstance('Istanza1');`
-
-  });
+  }
   
 
   // Reindirizzare l'output console
