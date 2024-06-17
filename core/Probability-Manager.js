@@ -1,26 +1,26 @@
 class ProbabilityManager {
-    constructor() {
-        this.events = [];
-        this.totalWeight = 0;
-    }
+  constructor() {
+    this.events = [];
+    this.totalWeight = 0;
+  }
 
-    addEvent(event, probability) {
-        this.events.push({ event, probability });
-        this.totalWeight += probability;
-    }
+  addEvent(event, probability) {
+    this.events.push({ event, probability });
+    this.totalWeight += probability;
+  }
 
-    getRandomEvent() {
-        let random = Math.random() * this.totalWeight;
-        for (let { event, probability } of this.events) {
-            if (random < probability) {
-                return event;
-            }
-            random -= probability;
-        }
+  getRandomEvent() {
+    let random = Math.random() * this.totalWeight;
+    for (let { event, probability } of this.events) {
+      if (random < probability) {
+        return event;
+      }
+      random -= probability;
     }
+  }
 
-    clearEvents() {
-        this.events = [];
-        this.totalWeight = 0;
-    }
+  clearEvents() {
+    this.events = [];
+    this.totalWeight = 0;
+  }
 }
