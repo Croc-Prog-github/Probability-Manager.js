@@ -14,7 +14,7 @@ class ProbabilityManager {
 
   addObject(instanceName, listName, object, probability) {
     if (!this.instances[instanceName] || !this.instances[instanceName][listName]) {
-      throw new Error("Lista o istanza non esistente");
+      throw new Error("List or instance does not exist");
     }
 
     const list = this.instances[instanceName][listName];
@@ -23,13 +23,13 @@ class ProbabilityManager {
 
     // Verifica che la somma delle probabilità sia 100
     if (list.totalWeight > 100) {
-      throw new Error("La somma delle probabilità supera il 100%");
+      throw new Error("The sum of the probabilities exceeds 100%");
     }
   }
 
   getRandomObject(instanceName, listName) {
     if (!this.instances[instanceName] || !this.instances[instanceName][listName]) {
-      throw new Error("Lista o istanza non esistente");
+      throw new Error("List or instance does not exist");
     }
 
     const list = this.instances[instanceName][listName];
