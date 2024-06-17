@@ -49,7 +49,7 @@ probManager.clearInstance('Istanza1');</textarea>
 
   function AlternativeForStatic() {
     document.getElementById('Editor').innerHTML = 
-`const probManager = new ProbabilityManager();
+`import probManager from "https://raw.githubusercontent.com/Croc-Prog-github/Probability-Manager.js/main/core/Probability-Manager.js";
 
 // Creazione di istanze e liste
 probManager.addList('Istanza1', '1');
@@ -92,7 +92,7 @@ probManager.clearInstance('Istanza1');`
   }
 </script>
 
-<script>
+<script>/*
 class ProbabilityManager {
   constructor() {
     this.instances = {};
@@ -147,5 +147,5 @@ class ProbabilityManager {
   clearAll() {
     this.instances = {};
   }
-}
+}*/
 </script>
