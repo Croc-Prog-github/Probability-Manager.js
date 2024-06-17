@@ -1,26 +1,55 @@
 class ProbabilityManager {
   constructor() {
-    this.events = [];
-    this.totalWeight = 0;
+    this.instances = {};
   }
 
-  addEvent(event, probability) {
-    this.events.push({ event, probability });
-    this.totalWeight += probability;
+  addList(instanceName, listName) {
+    if (!this.instances[instanceName]) {
+      this.instances[instanceName] = {};
+    }
+    if (!this.instances[instanceName][listName]) {
+      this.instances[instanceName][listName] = { objects: [], totalWeight: 0 };
+    }
   }
 
-  getRandomEvent() {
-    let random = Math.random() * this.totalWeight;
-    for (let { event, probability } of this.events) {
+  addObject(instanceName, listName, object, probability) {
+    if (!this.instances[instanceName] || !this.instances[instanceName][listName]) {
+      throw new Error("Lista o istanza non esistente");
+    }
+
+    const list = this.instances[instanceName][listName];
+    list.objects.push({ object, probability });
+    list.totalWeight += probability;
+
+    // Verifica che la somma delle probabilità sia 100
+    if (list.totalWeight > 100) {
+      throw new Error("La somma delle probabilità supera il 100%");
+    }
+  }
+
+  getRandomObject(instanceName, listName) {
+    if (!this.instances[instanceName] || !this.instances[instanceName][listName]) {
+      throw new Error("Lista o istanza non esistente");
+    }
+
+    const list = this.instances[instanceName][listName];
+    let random = Math.random() * list.totalWeight;
+
+    for (let { object, probability } of list.objects) {
       if (random < probability) {
-        return event;
+        return object;
       }
       random -= probability;
     }
   }
 
-  clearEvents() {
-    this.events = [];
-    this.totalWeight = 0;
+  clearInstance(instanceName) {
+    if (this.instances[instanceName]) {
+      delete this.instances[instanceName];
+    }
+  }
+
+  clearAll() {
+    this.instances = {};
   }
 }

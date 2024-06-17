@@ -2,7 +2,7 @@
 Un semplice framework per JS che semplifica la gestione della probabilità, soprattutto per il riscatto di ricompense nei videogame.
 
 ## Guida all'uso
-**Instanze**: Dentro di esse, puoi creare più di una *Lista*, verranno poi eseguite in ordine crescente in base al nome (cioè un numero > di 0; non possono esserci liste con lo stesso nome).
+**Istanze**: Dentro di esse, puoi creare più di una *Lista*, verranno poi eseguite in ordine crescente in base al nome (cioè un numero > di 0; non possono esserci liste con lo stesso nome).
 
 **Liste**: Sono un elenco di più Oggetti che possono essere estratti con una certa probabilità, scelta da te.
 

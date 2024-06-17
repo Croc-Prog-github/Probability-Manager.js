@@ -1,11 +1,20 @@
-// Definizione
 const probManager = new ProbabilityManager();
 
-// Aggiunta di eventi con le loro probabilità
-probManager.addEvent('Gold Coin', 10);
-probManager.addEvent('Silver Coin', 30);
-probManager.addEvent('Bronze Coin', 60);
+// Creazione di istanze e liste
+probManager.addList('Istanza1', '1');
+probManager.addList('Istanza1', '2');
 
-// Estrazione di un evento casuale
-let MyRandomEvent = probManager.getRandomEvent();
-console.log(`Evento estratto: ${MyRandomEvent}`);
+// Aggiunta di oggetti con probabilità
+probManager.addObject('Istanza1', '1', 'Moneta d\'oro', 50);
+probManager.addObject('Istanza1', '1', 'Moneta d\'argento', 50);
+probManager.addObject('Istanza1', '2', 'Moneta di bronzo', 100);
+
+// Estrazione di un oggetto casuale
+let randomEvent = probManager.getRandomObject('Istanza1', '1');
+console.log(`Oggetto estratto: ${randomEvent}`);
+
+randomEvent = probManager.getRandomObject('Istanza1', '2');
+console.log(`Oggetto estratto: ${randomEvent}`);
+
+// Pulizia delle istanze
+probManager.clearInstance('Istanza1');
