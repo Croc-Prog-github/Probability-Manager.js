@@ -14,34 +14,113 @@
 </html>
 
 <script>
-    // Correggere il fetch e ottenere il contenuto del file senza commenti sourceMappingURL
-    fetch('/core/example.js')
-        .then(response => response.text())
-        .then(scriptContent => {
-            // Rimuove le righe che iniziano con //# sourceMappingURL=
-            scriptContent = scriptContent.replace(/\/\/# sourceMappingURL=.*$/gm, '');
-            document.getElementById('Editor').textContent = scriptContent;
-        })
-        .catch(error => {
-            console.error('Error fetching example script:', error);
-        });
+  // Correggere il fetch e ottenere il contenuto del file senza commenti sourceMappingURL
+  fetch('/core/example.js')
+    .then(response => response.text())
+    .then(scriptContent => {
+      // Rimuove le righe che iniziano con //# sourceMappingURL=
+      scriptContent = scriptContent.replace(/\/\/# sourceMappingURL=.*$/gm, '');
+      document.getElementById('Editor').textContent = scriptContent;
+    })
+    .catch(error => {
+      console.error('Error fetching example script:', error);
+      document.getElementById('Editor').value =
+      `
+const probManager = new ProbabilityManager();
+// Creazione di istanze e liste
+probManager.addList('Istanza1', '1');
+probManager.addList('Istanza1', '2');
 
-    // Reindirizzare l'output console
-    (function() {
-        var oldLog = console.log;
-        console.log = function(message) {
-            document.getElementById('Out').value += message + '\n';
-            oldLog.apply(console, arguments);
-        };
-    })();
+// Aggiunta di oggetti con probabilità
+probManager.addObject('Istanza1', '1', 'Moneta d\'oro', 50);
+probManager.addObject('Istanza1', '1', 'Moneta d\'argento', 50);
+probManager.addObject('Istanza1', '2', 'Moneta di bronzo', 100);
 
-    function Run() {
-        const editorContent = document.getElementById('Editor').value;
-        try {
-            document.getElementById('Out').value = ''; // Pulisce l'output
-            eval(editorContent);
-        } catch (error) {
-            document.getElementById('Out').value = 'Error: ' + error.message;
-        }
+// Estrazione di un oggetto casuale
+let randomEvent = probManager.getRandomObject('Istanza1', '1');
+console.log('Oggetto estratto: ${randomEvent}');
+
+randomEvent = probManager.getRandomObject('Istanza1', '2');
+console.log('Oggetto estratto: ${randomEvent}');
+
+// Pulizia delle istanze
+probManager.clearInstance('Istanza1');`
+    });
+
+  // Reindirizzare l'output console
+  (function() {
+    var oldLog = console.log;
+    console.log = function(message) {
+      document.getElementById('Out').value += message + '\n';
+      oldLog.apply(console, arguments);
+    };
+  })();
+
+  function Run() {
+    const editorContent = document.getElementById('Editor').value;
+    try {
+      document.getElementById('Out').value = ''; // Pulisce l'output
+      eval(editorContent);
+    } catch (error) {
+      document.getElementById('Out').value = 'Error: ' + error.message;
     }
+  }
+</script>
+
+<script>
+class ProbabilityManager {
+  constructor() {
+    this.instances = {};
+  }
+
+  addList(instanceName, listName) {
+    if (!this.instances[instanceName]) {
+      this.instances[instanceName] = {};
+    }
+    if (!this.instances[instanceName][listName]) {
+      this.instances[instanceName][listName] = { objects: [], totalWeight: 0 };
+    }
+  }
+
+  addObject(instanceName, listName, object, probability) {
+    if (!this.instances[instanceName] || !this.instances[instanceName][listName]) {
+      throw new Error("Lista o istanza non esistente");
+    }
+
+    const list = this.instances[instanceName][listName];
+    list.objects.push({ object, probability });
+    list.totalWeight += probability;
+
+    // Verifica che la somma delle probabilità sia 100
+    if (list.totalWeight > 100) {
+      throw new Error("La somma delle probabilità supera il 100%");
+    }
+  }
+
+  getRandomObject(instanceName, listName) {
+    if (!this.instances[instanceName] || !this.instances[instanceName][listName]) {
+      throw new Error("Lista o istanza non esistente");
+    }
+
+    const list = this.instances[instanceName][listName];
+    let random = Math.random() * list.totalWeight;
+
+    for (let { object, probability } of list.objects) {
+      if (random < probability) {
+        return object;
+      }
+      random -= probability;
+    }
+  }
+
+  clearInstance(instanceName) {
+    if (this.instances[instanceName]) {
+      delete this.instances[instanceName];
+    }
+  }
+
+  clearAll() {
+    this.instances = {};
+  }
+}
 </script>

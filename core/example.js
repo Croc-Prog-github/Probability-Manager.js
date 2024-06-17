@@ -11,10 +11,10 @@ probManager.addObject('Istanza1', '2', 'Moneta di bronzo', 100);
 
 // Estrazione di un oggetto casuale
 let randomEvent = probManager.getRandomObject('Istanza1', '1');
-console.log(`Oggetto estratto: ${randomEvent}`);
+console.log(`Oggetto estratto: `+ randomEvent);
 
 randomEvent = probManager.getRandomObject('Istanza1', '2');
-console.log(`Oggetto estratto: ${randomEvent}`);
+console.log(`Oggetto estratto: `+ randomEvent);
 
 // Pulizia delle istanze
 probManager.clearInstance('Istanza1');
