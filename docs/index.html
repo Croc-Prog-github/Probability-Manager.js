@@ -10,24 +10,24 @@
     <textarea name="Editor" id="Editor" oninput="Run()" autocomplete="off" style="height: 320px; resize: vertical;" spellcheck="false">
 const probManager = new ProbabilityManager();
 
-// Creazione di istanze e liste
-probManager.addList('Istanza1', '1');
-probManager.addList('Istanza1', '2');
+// Creation of instances and lists
+probManager.addList('Instance1', '1');
+probManager.addList('Instance1', '2');
       
-// Aggiunta di oggetti con probabilità
-probManager.addObject('Istanza1', '1', 'Moneta d\'oro', 50);
-probManager.addObject('Istanza1', '1', 'Moneta d\'argento', 50);
-probManager.addObject('Istanza1', '2', 'Moneta di bronzo', 100);
+// Adding objects with probability
+probManager.addObject('Instance1', '1', 'Gold coin', 50);
+probManager.addObject('Instance1', '1', 'Silver coin', 50);
+probManager.addObject('Instance1', '2', 'Bronze coin', 100);
       
-// Estrazione di un oggetto casuale
-let randomEvent = probManager.getRandomObject('Istanza1', '1');
-console.log(`Oggetto estratto: `+ randomEvent);
+// Extraction of a random object
+let randomEvent = probManager.getRandomObject('Instance1', '1');
+console.log(`Extracted object: `+ randomEvent);
 
-randomEvent = probManager.getRandomObject('Istanza1', '2');
-console.log(`Oggetto estratto: `+ randomEvent);
+randomEvent = probManager.getRandomObject('Instance1', '2');
+console.log(`Extracted object: `+ randomEvent);
 
-// Pulizia delle istanze
-probManager.clearInstance('Istanza1');</textarea>
+// Cleanup of instances
+probManager.clearInstance('Instance1');</textarea>
     <textarea name="Output" id="Out" rows="7" disabled style="resize: none;">Edit the example for run it: add an Enter or a Space.</textarea>
     <button hidden style="width: fit-content; background: palegreen; border: solid 3px; border-color: forestgreen; font-weight: bold; font-family: sans-serif;">Run</button>
   </body>
