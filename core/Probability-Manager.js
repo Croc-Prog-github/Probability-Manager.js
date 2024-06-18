@@ -1,3 +1,6 @@
+/******
+Further details on the license and usage guide are here: https://github.com/Croc-Prog-github/Probability-Manager.js
+******/
 class ProbabilityManager {
   constructor() {
     this.instances = {};

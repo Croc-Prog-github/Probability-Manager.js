@@ -1,3 +1,6 @@
+/******
+Further details on the license and usage guide are here: https://github.com/Croc-Prog-github/Probability-Manager.js
+******/
 declare module "https://raw.githubusercontent.com/Croc-Prog-github/Probability-Manager.js/main/core/Probability-Manager.js" {
   type ProbabilityType = number | 'auto_DirectProp' | 'auto_InversProp';
   
