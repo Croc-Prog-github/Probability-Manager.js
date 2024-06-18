@@ -23,7 +23,9 @@ class ProbabilityManager {
 
     // Verifica che la somma delle probabilità sia 100
     if (list.totalWeight > 100) {
-      throw new Error("The sum of the probabilities exceeds 100%");
+      throw new Error("The sum of the probabilities is greater than 100%");
+    } else if (list.totalWeight < 100) {
+      throw new Error("The sum of the probabilities is less than 100%");
     }
   }
 
