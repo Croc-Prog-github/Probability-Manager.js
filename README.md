@@ -1,5 +1,5 @@
 # Probability Manager.js
-Un semplice framework per JS che semplifica la gestione della probabilità, soprattutto per il riscatto di ricompense nei videogame.
+Una semplice libreria per JS che semplifica la gestione della probabilità, soprattutto per il riscatto di ricompense nei videogame.
 
 <div align="center">
 
