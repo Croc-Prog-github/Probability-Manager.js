@@ -1,32 +1,20 @@
 const probManager = new ProbabilityManager();
 
-// Creazione di istanze e liste
-probManager.addList('Istanza1', '1');
-probManager.addList('Istanza1', '2');
+// Creation of instances and lists
+probManager.addList('Instance1', '1');
+probManager.addList('Instance1', '2');
+      
+// Adding objects with probability
+probManager.addObject('Instance1', '1', 'Gold coin', 50);
+probManager.addObject('Instance1', '1', 'Silver coin', 50);
+probManager.addObject('Instance1', '2', 'Bronze coin', 100);
+      
+// Extraction of a random object
+let randomEvent = probManager.getRandomObject('Instance1', '1');
+console.log(`Extracted object: `+ randomEvent);
 
-// Aggiunta di oggetti con probabilità
-try {
-  probManager.addObject('Istanza1', '1', 'Moneta d\'oro', 50);
-  probManager.addObject('Istanza1', '1', 'Moneta d\'argento', 50);
-  probManager.addObject('Istanza1', '2', 'Moneta di bronzo', 100);
-} catch (error) {
-  console.error(error.message);
-}
+randomEvent = probManager.getRandomObject('Instance1', '2');
+console.log(`Extracted object: `+ randomEvent);
 
-// Estrazione di un oggetto casuale
-try {
-  let randomEvent = probManager.getRandomObject('Istanza1', '1');
-  console.log(`Oggetto estratto: ${randomEvent}`);
-
-  randomEvent = probManager.getRandomObject('Istanza1', '2');
-  console.log(`Oggetto estratto: ${randomEvent}`);
-} catch (error) {
-  console.error(error.message);
-}
-
-// Pulizia delle istanze
-try {
-  probManager.clearInstance('Istanza1');
-} catch (error) {
-  console.error(error.message);
-}
+// Cleanup of instances
+probManager.clearInstance('Instance1');
