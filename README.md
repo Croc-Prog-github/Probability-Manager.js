@@ -26,8 +26,12 @@ Una semplice libreria per JS che semplifica la gestione della probabilità, sopr
 **Oggetti**: Un oggetto è una variabile, solitamente una stringa di caratteri di testo (esempio: Moneta d'oro), associato a una valore in percentuale (cioè la probabilità di essere estratto).<br>In una Lista, puoi aggiungere tutti gli Oggetti che vuoi, a condizione che la somma di tutti i valori in percentuale sia uguale a 100.
 
 ## Utilizzo
-Utilizza i seguenti comandi per includere il file nel tuo script:<br>
-**JavaScript**:
+Per utilizzare la libreria segui i passaggi sottostanti.
+1. Scarica il file in base al linguaggio principale che utilizzi: [JavaScript](https://github.com/Croc-Prog-github/Probability-Manager.js/blob/main/core/Probability-Manager.js) oppure [TypeScript](https://github.com/Croc-Prog-github/Probability-Manager.js/blob/main/core/Probability-Manager.ts)
+2. Sposta il file nella directory del tuo progetto.
+3. In un altro file Js o Ts, inserisci in alto la stringa: `const probManager = new ProbabilityManager();` per dichiarare l'utilizzo della libreria.
+4. Inizia a scrivere codice, usando i comandi illustrati appena sotto.
+<!--**JavaScript**:
 ```js
 import probManager from "https://raw.githubusercontent.com/Croc-Prog-github/Probability-Manager.js/main/core/Probability-Manager.js";
 ```
@@ -35,7 +39,7 @@ import probManager from "https://raw.githubusercontent.com/Croc-Prog-github/Prob
 **TypeScript**
 ```ts
 import probManager from "https://raw.githubusercontent.com/Croc-Prog-github/Probability-Manager.js/main/core/Probability-Manager.ts";
-```
+```-->
 
 ## Comandi
 In questa sezione sono specificati tutti i comandi utilizzabili, con la loro relativa spiegazione.
