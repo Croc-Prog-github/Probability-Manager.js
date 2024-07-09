@@ -3,7 +3,7 @@ Una semplice libreria per JS che semplifica la gestione della probabilità, sopr
 
 <div align="center">
 
-  ![State](https://img.shields.io/badge/State%3A-Making-white?style=flat-square)
+  ![State](https://img.shields.io/badge/State%3A-Finished-lighgreen?style=flat-square)
   <!-- [![CodeQL](https://github.com/Croc-Prog-github/Probability-Manager.js/actions/workflows/github-code-scanning/codeql/badge.svg?style=flat-square&branch=main)](https://github.com/Croc-Prog-github/Probability-Manager.js/actions/workflows/github-code-scanning/codeql) -->
 </div>
 <hr>
