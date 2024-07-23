@@ -92,7 +92,7 @@ class ProbabilityManager {
     this.instances = {};
   }
 
-  toArray() {
+  /*toArray() {
     const result = [];
     for (const [instanceName, lists] of Object.entries(this.instances)) {
       for (const [listName, list] of Object.entries(lists)) {
@@ -102,5 +102,5 @@ class ProbabilityManager {
       }
     }
     return result;
-  }
+  }*/
 }
