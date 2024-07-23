@@ -12,6 +12,7 @@ declare module "https://raw.githubusercontent.com/Croc-Prog-github/Probability-M
     clearInstance(instanceName: string): void;
     clearAll(): void;
     toArray(): void;
+    toArrayForInstance(instanceName: string): void
   }
   
   export default ProbabilityManager;
