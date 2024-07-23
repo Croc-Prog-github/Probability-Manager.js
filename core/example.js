@@ -12,5 +12,8 @@ probManager.addObject('Instance1', '1', 'Bronze coin', 50);
 let randomEvent = probManager.getRandomObject('Instance1', '1');
 console.log(`Extracted object: `+ randomEvent);
 
+const arrayRepresentation = probManager.toArrayForInstance('Instance1');
+console.log(arrayRepresentation);
+
 // Cleanup of instances
 probManager.clearInstance('Instance1');

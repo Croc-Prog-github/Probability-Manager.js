@@ -19,16 +19,19 @@ const probManager = new ProbabilityManager();
 
 // Creation of instances and lists
 probManager.addList('Instance1', '1');
-      
+ 
 // Adding objects with probability
 probManager.addObject('Instance1', '1', 'Gold coin', 15);
 probManager.addObject('Instance1', '1', 'Silver coin', 35);
 probManager.addObject('Instance1', '1', 'Bronze coin', 50);
-      
+
 // Extraction of a random object
 let randomEvent = probManager.getRandomObject('Instance1', '1');
 console.log(`Extracted object: `+ randomEvent);
-      
+
+const arrayRepresentation = probManager.toArrayForInstance('Instance1');
+console.log(arrayRepresentation);
+
 // Cleanup of instances
 probManager.clearInstance('Instance1');</textarea>
     <textarea name="Output" id="Out" rows="7" disabled style="resize: none;">Edit the example for run it: add an Enter or a Space.</textarea>
@@ -172,6 +175,20 @@ class ProbabilityManager {
         for (const { object, probability } of list.objects) {
           result.push([instanceName, listName, object, probability]);
         }
+      }
+    }
+    return result;
+  }
+
+  toArrayForInstance(instanceName) {
+    const result = [];
+    const lists = this.instances[instanceName];
+    if (!lists) {
+      throw new Error(`Instance does not exist. Instance: ${instanceName}`);
+    }
+    for (const [listName, list] of Object.entries(lists)) {
+      for (const { object, probability } of list.objects) {
+        result.push([instanceName, listName, object, probability]);
       }
     }
     return result;

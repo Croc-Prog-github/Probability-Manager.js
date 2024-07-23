@@ -27,7 +27,7 @@ Una semplice libreria per JS che semplifica la gestione della probabilità, sopr
 
 ## Utilizzo
 Per utilizzare la libreria segui i passaggi sottostanti.
-1. Scarica il file in base al linguaggio principale che utilizzi: [JavaScript](https://github.com/Croc-Prog-github/Probability-Manager.js/blob/main/core/Probability-Manager.js) oppure [TypeScript](https://github.com/Croc-Prog-github/Probability-Manager.js/blob/main/core/Probability-Manager.ts)
+1. Scarica il file libreria (dall'ultimo Relase stabile) in base al linguaggio che utilizzi: [JavaScript](https://github.com/Croc-Prog-github/Probability-Manager.js/blob/v1.0.0/core/Probability-Manager.js) oppure [TypeScript](https://github.com/Croc-Prog-github/Probability-Manager.js/blob/v1.0.0/core/Probability-Manager.ts)
 2. Sposta il file nella directory del tuo progetto.
 3. In un altro file Js o Ts, inserisci in alto la stringa: `const probManager = new ProbabilityManager();` per dichiarare l'utilizzo della libreria.
 4. Inizia a scrivere codice, usando i comandi illustrati appena sotto.
@@ -71,3 +71,10 @@ Rimuove tutte le liste e gli oggetti associati a una specifica istanza.<br>
 
 **`probManager.clearAll()`**
 Rimuove tutte le istanze, insieme a tutte le liste e gli oggetti associati.
+
+**`probManager.toArray()`**
+...
+
+**`probManager.toArrayForInstance(instanceName)`**
+...
+- **instanceName**: ...
