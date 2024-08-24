@@ -73,8 +73,8 @@ Rimuove tutte le liste e gli oggetti associati a una specifica istanza.<br>
 Rimuove tutte le istanze, insieme a tutte le liste e gli oggetti associati.
 
 **`probManager.toArray()`**
-...
+Converte tutte le istanze in array bidimensionali per semplificarne la gestione.
 
 **`probManager.toArrayForInstance(instanceName)`**
-...
-- **instanceName**: ...
+Converte solo una specifica istanza in un array bidimensionale per semplificarne la gestione.
+- **instanceName**: Il nome dell'istanza da covertire
