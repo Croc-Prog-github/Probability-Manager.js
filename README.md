@@ -77,4 +77,4 @@ Converte tutte le istanze in array bidimensionali per semplificarne la gestione.
 
 **`probManager.toArrayForInstance(instanceName)`**
 Converte solo una specifica istanza in un array bidimensionale per semplificarne la gestione.
-- **instanceName**: Il nome dell'istanza da covertire
+- **instanceName**: Il nome dell'istanza da convertire
